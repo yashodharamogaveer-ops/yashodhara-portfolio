@@ -1,572 +1,118 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-:root{
-    --bg:#ffffff;
-    --text:#111111;
-    --border:#000000;
-    --muted:#666666;
-}
-
-body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:Arial, sans-serif;
-    line-height:1.7;
-}
-
-.container{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-}
-
-header{
-    border-bottom:2px solid #000;
-    padding:20px 0;
-}
-
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    font-family:Georgia, serif;
-    font-size:1.4rem;
-    font-weight:bold;
-    letter-spacing:1px;
-}
-
-.nav-links{
-    display:flex;
-    list-style:none;
-    gap:20px;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:#000;
-    font-weight:600;
-}
-
-.nav-links a:hover{
-    text-decoration:underline;
-}
-
-.hero{
-    padding:80px 0;
-}
-
-.hero-content{
-    display:grid;
-    grid-template-columns:1fr 350px;
-    gap:50px;
-    align-items:center;
-}
-
-.hero h1{
-    font-family:Georgia, serif;
-    font-size:4rem;
-    margin-bottom:10px;
-}
-
-.hero h2{
-    font-size:1rem;
-    letter-spacing:2px;
-    margin-bottom:25px;
-}
-
-.hero p{
-    color:var(--muted);
-    max-width:600px;
-}
-
-.profile-img{
-    width:100%;
-    border:2px solid #000;
-    filter:grayscale(100%);
-}
-
-.btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:12px 25px;
-    border:2px solid #000;
-    color:#000;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.btn:hover{
-    background:#000;
-    color:#fff;
-}
-
-.resume-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:20px;
-    flex-wrap:wrap;
-    margin-bottom:40px;
-}
-
-.resume-contact{
-    color:var(--muted);
-    margin:8px 0;
-}
-
-.download-btn{
-    align-self:flex-start;
-    margin-top:10px;
-}
-
-.resume-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-    margin-bottom:40px;
-}
-
-.resume-card{
-    border:2px solid #000;
-    padding:25px;
-    background:#fff;
-    transition:all 0.3s ease;
-}
-
-.resume-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 12px 30px rgba(0,0,0,0.12);
-}
-
-.resume-card h2{
-    font-family:Georgia, serif;
-    font-size:1.35rem;
-    margin-bottom:18px;
-}
-
-.highlight-card{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
-.highlight-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.highlight-box{
-    border:1px solid #ddd;
-    padding:15px;
-    background:#fafafa;
-}
-
-.highlight-box strong{
-    display:block;
-    margin-bottom:8px;
-    font-size:0.95rem;
-}
-
-.highlight-box span{
-    color:var(--muted);
-    font-size:0.95rem;
-}
-
-.education-item{
-    margin-bottom:18px;
-}
-
-.education-item h3{
-    margin-bottom:6px;
-    font-size:1rem;
-}
-
-.skill-badges{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.badge{
-    display:inline-block;
-    padding:10px 14px;
-    border:1px solid #000;
-    border-radius:30px;
-    font-size:0.95rem;
-    background:#f7f7f7;
-}
-
-@media (max-width:900px){
-    .resume-grid{
-        grid-template-columns:1fr;
-    }
-}
-
-@media (max-width:640px){
-    .resume-top{
-        flex-direction:column;
-    }
-    .download-btn{
-        width:100%;
-        text-align:center;
-    }
-}
-
-.section{
-    padding:70px 0;
-    border-top:2px solid #000;
-}
-
-.section-title{
-    font-family:Georgia, serif;
-    font-size:2rem;
-    margin-bottom:30px;
-}
-
-.work-list{
-    list-style:none;
-}
-
-.work-list li{
-    margin-bottom:12px;
-}
-
-.skills-categories{
-    display:flex;
-    flex-direction:column;
-    gap:40px;
-}
-
-.category-title{
-    font-family:Georgia, serif;
-    font-size:1.3rem;
-    color:#000;
-    margin-bottom:15px;
-    padding-bottom:10px;
-    border-bottom:2px solid #000;
-}
-
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.skill-card{
-    border:2px solid #000;
-    padding:25px;
-    transition:all 0.3s ease;
-    background:#fff;
-}
-
-.skill-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
-    border-color:#333;
-}
-
-.skill-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:10px;
-    margin-bottom:15px;
-}
-
-.skill-card h3{
-    margin:0;
-    font-size:1.1rem;
-    flex:1;
-}
-
-.skill-level{
-    font-size:0.8rem;
-    font-weight:bold;
-    color:#666;
-    text-transform:uppercase;
-    letter-spacing:0.5px;
-    white-space:nowrap;
-}
-
-.skill-bar{
-    width:100%;
-    height:6px;
-    background:#e0e0e0;
-    border-radius:3px;
-    overflow:hidden;
-}
-
-.skill-progress{
-    height:100%;
-    background:linear-gradient(90deg,#000,#333);
-    border-radius:3px;
-    transition:width 0.5s ease;
-}
-
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.project-card{
-    border:2px solid #000;
-    padding:25px;
-}
-
-.project-card h3{
-    margin-bottom:15px;
-}
-
-.project-card p{
-    color:var(--muted);
-}
-
-footer{
-    border-top:2px solid #000;
-    padding:30px 0;
-    text-align:center;
-}
-
-footer p{
-    margin:8px 0;
-}
-
-.copyright{
-    font-weight:bold;
-    font-size:1rem;
-    color:#000;
-}
-
-.footer-credit{
-    font-size:0.95rem;
-    color:#333;
-    margin-top:5px;
-}
-
-/* Contact Page Styles */
-.contact-wrapper{
-    display:grid;
-    grid-template-columns:1fr 1.2fr;
-    gap:50px;
-}
-
-.contact-info{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-}
-
-.info-card{
-    border:2px solid #000;
-    padding:20px;
-    transition:all 0.3s ease;
-}
-
-.info-card:hover{
-    background:#f5f5f5;
-    transform:translateY(-5px);
-    box-shadow:0 8px 16px rgba(0,0,0,0.1);
-}
-
-.info-card h3{
-    margin-bottom:10px;
-    font-size:1.1rem;
-    color:#000;
-}
-
-.info-card p{
-    margin:0;
-}
-
-.info-card a{
-    color:#000;
-    text-decoration:none;
-    border-bottom:2px solid #000;
-    transition:all 0.3s ease;
-}
-
-.info-card a:hover{
-    color:#333;
-    border-bottom-color:#333;
-}
-
-.contact-form-wrapper{
-    display:flex;
-    flex-direction:column;
-}
-
-.contact-form{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-.form-group{
-    display:flex;
-    flex-direction:column;
-}
-
-.form-input,
-.form-textarea{
-    padding:12px 15px;
-    border:2px solid #000;
-    font-family:Arial, sans-serif;
-    font-size:1rem;
-    transition:all 0.3s ease;
-}
-
-.form-input:focus,
-.form-textarea:focus{
-    outline:none;
-    background:#f9f9f9;
-    box-shadow:0 0 0 3px rgba(0,0,0,0.1);
-}
-
-.form-input::placeholder,
-.form-textarea::placeholder{
-    color:#999;
-}
-
-.form-error{
-    color:#e74c3c;
-    font-size:0.9rem;
-    margin-top:5px;
-}
-
-.btn-small{
-    padding:8px 16px;
-    font-size:0.9rem;
-    margin-top:10px;
-}
-
-.button-container{
-    display:flex;
-    justify-content:center;
-    margin-top:30px;
-}
-
-/* About Page Styles */
-.about-content{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-    line-height:1.9;
-}
-
-.about-content p{
-    color:var(--muted);
-    font-size:1rem;
-    text-align:justify;
-}
-
-.education-card{
-    border:2px solid #000;
-    padding:30px;
-    transition:all 0.3s ease;
-    background:#fff;
-}
-
-.education-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-
-.education-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:20px;
-    border-bottom:2px solid #000;
-    padding-bottom:15px;
-}
-
-.education-header h3{
-    font-size:1.3rem;
-    margin:0;
-}
-
-.education-period{
-    background:#000;
-    color:#fff;
-    padding:5px 15px;
-    border-radius:20px;
-    font-weight:bold;
-    font-size:0.9rem;
-}
-
-.education-details{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
-
-.education-details p{
-    margin:0;
-    font-size:0.95rem;
-}
-
-.education-details p strong{
-    color:#000;
-    font-weight:bold;
-}
-
-.education-desc{
-    color:var(--muted);
-    margin-top:10px;
-    padding-top:10px;
-    border-top:1px solid #e0e0e0;
-    font-style:italic;
-}
-
-.objective-box{
-    border-left:4px solid #000;
-    padding:25px;
-    background:#f5f5f5;
-    border-radius:4px;
-    line-height:1.9;
-}
-
-.objective-box p{
-    margin:0;
-    color:var(--muted);
-    font-size:1rem;
-}
-
-@media(max-width:768px){
-
-    .hero-content{
-        grid-template-columns:1fr;
-    }
-
-    .hero h1{
-        font-size:2.5rem;
-    }
-
-    .navbar{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .skills-grid{
-        grid-template-columns:1fr;
-    }
-
-    .contact-wrapper{
-        grid-template-columns:1fr;
-        gap:30px;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume | Yashodhara</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+<div class="container navbar">
+
+<div class="logo">YASHODHARA</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="skills.html">Skills</a></li>
+<li><a href="resume.html">Resume</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</div>
+</header>
+
+<section class="section">
+
+<div class="container">
+
+<div class="resume-top">
+  <div>
+    <h1 class="section-title">Resume</h1>
+    <p class="resume-contact">Phone: 9731761914 | Email: yashodharamogaveer@gmail.com</p>
+    <p class="resume-contact">Kundapura, Karnataka</p>
+    <p class="resume-contact">LinkedIn: <a href="https://linkedin.com/in/yashodhar-mogaveer" target="_blank" rel="noopener">linkedin.com/in/yashodhar-mogaveer</a> | GitHub: <a href="https://github.com/yashodharamogaveer-ops" target="_blank" rel="noopener">github.com/yashodharamogaveer</a></p>
+  </div>
+  <a class="btn download-btn" href="assets/YASHODHARA_RESUME.docx" download="Yashodhara_Resume.docx">Download Resume</a>
+</div>
+
+<div class="resume-grid">
+  <div class="resume-card">
+    <h2>Career Objective</h2>
+    <p>Motivated BCA student with strong academic performance and a solid foundation in programming, web development, and databases. Seeking an entry-level software development role to contribute technical skills and grow through hands-on experience.</p>
+  </div>
+
+  <div class="resume-card highlight-card">
+    <h2>Technical Skills</h2>
+    <div class="highlight-grid">
+      <div class="highlight-box">
+        <strong>Programming</strong>
+        <span>Python, Java</span>
+      </div>
+      <div class="highlight-box">
+        <strong>Web</strong>
+        <span>HTML, CSS</span>
+      </div>
+      <div class="highlight-box">
+        <strong>Database</strong>
+        <span>SQL</span>
+      </div>
+      <div class="highlight-box">
+        <strong>Tools</strong>
+        <span>MS Word, Excel, PowerPoint</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="resume-card">
+  <h2>Academic Projects</h2>
+  <ul class="work-list">
+    <li><strong>Portfolio Website</strong> – Developed a responsive personal portfolio website using HTML and CSS, showcasing projects, skills, and contact details.</li>
+    <li><strong>Student Management System</strong> – Built a Python application with CRUD operations for managing student records and improving data organization.</li>
+    <li><strong>Calculator Application</strong> – Developed a Python calculator with input validation and error handling for accurate calculations.</li>
+  </ul>
+</div>
+
+<div class="resume-card">
+  <h2>Education</h2>
+  <div class="education-item">
+    <h3>BCA (2023–2026)</h3>
+    <p>Bhandarkars Arts and Science College, Kundapura | CGPA: 9.23</p>
+  </div>
+  <div class="education-item">
+    <h3>PUC (2023)</h3>
+    <p>Score: 94.33%</p>
+  </div>
+  <div class="education-item">
+    <h3>SSLC (2021)</h3>
+    <p>Score: 82.08%</p>
+  </div>
+</div>
+
+<div class="resume-card">
+  <h2>Soft Skills</h2>
+  <div class="skill-badges">
+    <span class="badge">Problem Solving</span>
+    <span class="badge">Team Collaboration</span>
+    <span class="badge">Communication</span>
+    <span class="badge">Adaptability</span>
+  </div>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+    <div class="container">
+        <p class="copyright">© 2026 Yashodhara</p>
+        <p class="footer-credit">Created & Maintained by Yashodhara</p>
+    </div>
+</footer>
+
+</body>
+</html>
